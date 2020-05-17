@@ -24,7 +24,7 @@ module.exports = {
         'login': process.env.PAGES_LOGIN || '/login.html'
     },
     'logging': {
-        'minimum': process.env.LOGGING_MINIMUM || 'INFO',
+        'minimum': process.env.LOGGING_MINIMUM || 'info',
         'datePattern': process.env.LOGGING_DATEPATTERN || 'MM-DDTHH:mm:ss'
     }
 };

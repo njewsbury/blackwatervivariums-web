@@ -11,11 +11,12 @@
     "build:scss": "npm run build:scss:public",
 
     "clean": "rm -Rf routes/public/resources routes/protected/resources",
-    "build": "npm run clean && npm run build:scss",
-
+    "prebuild": "npm run clean && npm run eslint",
+    "build": "npm run build:scss",
     
     "eslint": "eslint --ignore-path .gitignore -f html . -o eslint.output.html",
-    "start": "node -r dotenv/config index.js"
+    
+    "start": "npm run build && node -r dotenv/config index.js"
   },
   "author": "njewsbury",
   "license": "-",

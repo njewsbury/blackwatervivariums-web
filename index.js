@@ -140,24 +140,41 @@ class WebServer {
         return new Promise((resolve, reject) => {
             logger.debug('Initialize server routes...');
 
-            // let publicPath = appconfig.path.public;
+            let publicPath = appconfig.path.public;
             let protectedPath = appconfig.path.protected;
 
-            // let loginPage = publicPath + appconfig.pages.login;
+            let loginPage = publicPath + appconfig.pages.login;
             let welcomePage = protectedPath + appconfig.pages.welcome;
 
             if (appconfig.path.context !== EMPTY_CONTEXT_PATH) {
-                // publicPath = appconfig.path.context + publicPath;
+                publicPath = appconfig.path.context + publicPath;
                 protectedPath = appconfig.path.context + protectedPath;
 
-                // loginPage = appconfig.path.context + loginPage;
+                loginPage = appconfig.path.context + loginPage;
                 welcomePage = appconfig.path.context + welcomePage;
             }
 
             // PUBLIC RESOURCES
-
+            this.app.use(publicPath, require('./routes/public'));
             // PROTECTED RESOURCES
-
+            this.app.use(
+                protectedPath,
+                (req, res, next) => {
+                    // ENSURE THE USER IS AUTHENTICATED
+                    if (!req.isAuthenticated || !req.isAuthenticated()) {
+                        if (req.session) {
+                            const attemptedAccess = req.originalUrl || req.url;
+                            if (attemptedAccess && attemptedAccess.includes('html')) {
+                                // Only allow the return to address to be an html file.
+                                req.session.returnTo = attemptedAccess;
+                            }
+                        }
+                        return res.redirect(loginPage);
+                    }
+                    next();
+                },
+                require('./routes/protected')
+            );
 
             // SETUP WELCOME FILE
             this.app.get(appconfig.path.context, (req, res) => {

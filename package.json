@@ -4,6 +4,16 @@
   "description": "Blackwater Vivariums Web Portal",
   "main": "index.js",
   "scripts": {
+
+    "prebuild:scss:public": "rm -Rf routes/public/resources/css",
+    "build:scss:public": "node-sass --output-style compressed --source-map true -r static/public/scss -o routes/public/resources/css",
+
+    "build:scss": "npm run build:scss:public",
+
+    "clean": "rm -Rf routes/public/resources routes/protected/resources",
+    "build": "npm run clean && npm run build:scss",
+
+    
     "eslint": "eslint --ignore-path .gitignore -f html . -o eslint.output.html",
     "start": "node -r dotenv/config index.js"
   },
@@ -18,12 +28,12 @@
     "ejs": "3.0.2",
     "express": "4.17.1",
     "helmet": "3.22.0",
-    "mysql": "2.18.1",
     "passport": "0.4.1",
     "winston": "3.2.1"
   },
   "devDependencies": {
     "eslint": "6.5.1",
-    "eslint-config-google": "0.14.0"
+    "eslint-config-google": "0.14.0",
+    "node-sass": "4.14.1"
   }
 }

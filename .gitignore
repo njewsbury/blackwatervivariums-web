@@ -1,3 +1,5 @@
 *.env
 eslint.output.html
 node_modules
+routes/public/resources
+routes/protected/resources

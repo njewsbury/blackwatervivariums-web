@@ -1,0 +1,29 @@
+{
+  "name": "blackwater-vivariums-web",
+  "version": "1.0.0",
+  "description": "Blackwater Vivariums Web Portal",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint --ignore-path .gitignore -f html . -o eslint.output.html",
+    "start": "node -r dotenv/config index.js"
+  },
+  "author": "njewsbury",
+  "license": "-",
+  "engines": {
+    "node": "12.16.x"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "dotenv": "8.2.0",
+    "ejs": "3.0.2",
+    "express": "4.17.1",
+    "helmet": "3.22.0",
+    "mysql": "2.18.1",
+    "passport": "0.4.1",
+    "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "6.5.1",
+    "eslint-config-google": "0.14.0"
+  }
+}

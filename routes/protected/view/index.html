@@ -1,10 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html class="fullscreen">
 
 <head>
     <%- include('../../templates/public-header.ejs'); -%>
 
+    <style>
+
+    </style>
 </head>
+
 <body>
-    <h1>Hello world!</h1>
+    <div class="container-fluid root-container">
+        <div class="row flex-grow-1">
+            <div class="col-2 navigation-column" style="background: #c6c8ca">
+                <div class="container-fluid mx-0 px-0 list-group navigation-container">
+                    <div class="row py-4 bg-primary mb-4">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <div style="width:76px; height:76px" class="bg-light rounded"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="list-group w-100">
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
+                                <span>
+                                    <span class="fa fa-home fa-lg fa-fw"></span>
+                                    <span>Home</span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark parent-list-group-item expanded">
+                                <span>
+                                    <span class="fa fa-tree fa-lg fa-fw"></span>
+                                    <span>Vivariums</span>
+                                </span>
+                                <!-- <span class="fa fa-chevron-right fa-fw text-right"></span> -->
+                                <span class="parent-item-chevron fa fa-chevron-down fa-fw text-right"></span>
+                                
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
+                                <span>
+                                    <span class="fa fa-tree fa-lg fa-fw"></span>
+                                    <span>Vivariums</span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
+                                <span>
+                                    <span class="fa fa-tree fa-lg fa-fw"></span>
+                                    <span>Vivariums</span>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
+                                <span>
+                                    <span class="fa fa-tree fa-lg fa-fw"></span>
+                                    <span>Vivariums</span>
+                                </span>
+                            </a>
+
+
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
+                                <span>
+                                    <span class="fa fa-cog fa-lg fa-fw"></span>
+                                    <span>Settings</span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
+                                <span>
+                                    <span class="fa fa-sign-out-alt fa-lg fa-fw"></span>
+                                    <span>Sign-Out</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 bg-light">
+                Cool beans
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../templates/public-body-footer.ejs'); -%>
 </body>
+</html>
+
+<!--
+    https://www.primefaces.org/icarus/dashboard.xhtml
+    https://aws.amazon.com/rds/aurora/?nc2=h_ql_prod_db_aa
+-->

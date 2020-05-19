@@ -153,25 +153,30 @@ class WebServer {
                 loginPage = appconfig.path.context + loginPage;
                 welcomePage = appconfig.path.context + welcomePage;
             }
-
+            this.app.get('*', (req, res, next) => {
+                logger.info(`GET ${req.originalUrl} || ${req.path}`);
+                next();
+            });
             // PUBLIC RESOURCES
             this.app.use(publicPath, require('./routes/public'));
             // PROTECTED RESOURCES
             this.app.use(
                 protectedPath,
+                // VS using 'connect-ensureloggedin' we can just replicate it's functionality.
                 (req, res, next) => {
-                    // ENSURE THE USER IS AUTHENTICATED
                     if (!req.isAuthenticated || !req.isAuthenticated()) {
                         if (req.session) {
                             const attemptedAccess = req.originalUrl || req.url;
                             if (attemptedAccess && attemptedAccess.includes('html')) {
-                                // Only allow the return to address to be an html file.
+                                // Ensures the user isn't returned to a js/css file (or api endpoint)
                                 req.session.returnTo = attemptedAccess;
                             }
                         }
-                        return res.redirect(loginPage);
+                        logger.info(`Bypassing authentication [LOGIN] ${loginPage}`);
+                        return next();
+                        // return res.redirect(loginPage); 
                     }
-                    next();
+                    return next();
                 },
                 require('./routes/protected')
             );
@@ -245,6 +250,8 @@ if (appconfig.runtime === 'cluster') {
             logger.warn(`A worker thread has died. Starting a new worker. [WORKER] ${worker.id}`);
             cluster.fork();
         });
+
+        return;
     }
 }
 

@@ -9,6 +9,6 @@ router.get('*.html', (req, res) => {
     return res.render(path.join(__dirname, 'view', req.path));
 });
 
-router.get('/resources', express.static(path.join(__dirname, 'resources')));
+router.use('/resources', express.static(path.join(__dirname, 'resources')));
 
 module.exports = router;

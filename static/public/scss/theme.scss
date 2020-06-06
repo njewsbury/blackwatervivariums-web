@@ -1,0 +1,10 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+
+$primary: #594950;
+$secondary: #6F4047;
+
+$cream: #dcdcdc;
+
+$theme-colors: ("cream": $cream);
+
+@import "../../../node_modules/bootstrap/scss/variables";

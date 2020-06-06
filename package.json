@@ -14,7 +14,7 @@
     "prebuild": "npm run clean && npm run eslint",
     "build": "npm run build:scss && npm run build:js",
     "eslint": "eslint -f html . -o eslint.output.html",
-    "start": "npm run build && node -r dotenv/config index.js"
+    "start": "npm run build && node index.js"
   },
   "author": "njewsbury",
   "license": "-",
@@ -23,10 +23,12 @@
   },
   "dependencies": {
     "body-parser": "1.19.0",
+    "bootstrap": "4.5.0",
     "dotenv": "8.2.0",
     "ejs": "3.0.2",
     "express": "4.17.1",
     "helmet": "3.22.0",
+    "jquery": "3.5.1",
     "passport": "0.4.1",
     "winston": "3.2.1"
   },

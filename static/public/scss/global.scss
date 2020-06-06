@@ -1,3 +1,5 @@
+@import "theme";
+
 html.fullscreen {
     width: 100% !important;
     height: 100% !important;
@@ -14,20 +16,7 @@ html.fullscreen body div.root-container {
     flex-direction: column;    
 }
 
-.navigation-container .list-group-item:first-child,
-.navigation-container .list-group-item:last-child {
-    border-radius: 0 !important;
-}
-
-.navigation-container .list-group-item:first-child {
-    border-top: none;
-}
-
-.navigation-container .list-group-item:last-child {
-    border-bottom: none;
-}
-
-.navigation-container .list-group-item {
+.navigation-container .bwv-nav-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,10 +25,14 @@ html.fullscreen body div.root-container {
     border-right: none;
 }
 
-.navigation-container .list-group-item.expanded {
-    background-color: #b9bbbe;
+.navigation-container a.bwv-nav-item:hover {
+    text-decoration: none;
 }
 
-.navigation-container .list-group-item.child-list-group-item {
-    background-color: #b9bbbe;
+.navigation-container .bwv-nav-item.parent.expanded {
+    background-color: darken($cream, 15%);
+}
+
+.navigation-container .bwv-nav-item.child {
+    background-color: darken($cream, 15%);
 }

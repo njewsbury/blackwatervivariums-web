@@ -12,78 +12,250 @@
 <body>
     <div class="container-fluid root-container">
         <div class="row flex-grow-1">
-            <div class="col-2 navigation-column" style="background: #c6c8ca">
-                <div class="container-fluid mx-0 px-0 list-group navigation-container">
-                    <div class="row py-4 bg-primary mb-4">
-                        <div class="col d-flex justify-content-center align-items-center">
-                            <div style="width:76px; height:76px" class="bg-light rounded"></div>
+            <!-- c6c8ca -->
+            <div class="col-2 navigation-column bg-cream">
+                <%- include('../../templates/public-navigation-column.ejs'); -%>
+            </div>
+            <div class="col-10 d-flex bg-light">
+                <div class="container-fluid py-2 my-1 d-flex flex-column flex-grow-1">
+                    <!-- ALERTS ROW -->
+                    <div class="row my-4">
+                        <div class="col-3">
+                            <div class="metric container-fluid border bg-success rounded" style="height: 5rem;">
+                                <div class="row no-gutters w-100 h-100 text-light">
+                                    <div class="col-2 d-flex justify-content-center align-items-center">
+                                        <span class="fa fa-thermometer-three-quarters fa-3x"></span>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-8 d-flex flex-column justify-content-center">
+                                        <div class="h2 font-weight-bold my-0" style="text-shadow: black 1px 1px 1px;">
+                                            500</div>
+                                        <span class="small">Temperature Alerts</span>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center flex-column">
+                                        <span class="fa fa-arrow-circle-up fa-lg py-1"></span>
+                                        <span class="small">+54</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="metric container-fluid border bg-success rounded" style="height: 5rem;">
+                                <div class="row no-gutters w-100 h-100 text-light">
+                                    <div class="col-2 d-flex justify-content-center align-items-center">
+                                        <span class="fa fa-bell fa-3x"></span>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-8 d-flex flex-column justify-content-center">
+                                        <div class="h2 font-weight-bold my-0" style="text-shadow: black 1px 1px 1px;">50
+                                        </div>
+                                        <span class="small">General Alerts</span>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center flex-column">
+                                        <span class="fa fa-arrow-circle-down fa-lg py-1"></span>
+                                        <span class="small">-10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="metric container-fluid border bg-success rounded" style="height: 5rem;">
+                                <div class="row no-gutters w-100 h-100 text-light">
+                                    <div class="col-2 d-flex justify-content-center align-items-center">
+                                        <span class="fa fa-tools fa-3x"></span>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-8 d-flex flex-column justify-content-center">
+                                        <div class="h2 font-weight-bold my-0" style="text-shadow: black 1px 1px 1px;">0
+                                        </div>
+                                        <span class="small">Upcoming Maintenance</span>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center flex-column">
+                                        <span class="fa fa-minus-circle fa-lg py-1"></span>
+                                        <span class="small">NC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="metric container-fluid border bg-success rounded" style="height: 5rem;">
+                                <div class="row no-gutters w-100 h-100 text-light">
+                                    <div class="col-2 d-flex justify-content-center align-items-center">
+                                        <span class="fa fa-stopwatch fa-3x"></span>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-8 d-flex flex-column justify-content-center">
+                                        <div class="h2 font-weight-bold my-0" style="text-shadow: black 1px 1px 1px;">0
+                                        </div>
+                                        <span class="small">Reminders</span>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center flex-column">
+                                        <span class="fa fa-minus-circle fa-lg py-1"></span>
+                                        <span class="small">NC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- STATS ROW -->
+                    <div class="row pb-5">
+                        <div class="col-2 d-flex flex-grow-1">
+                            <div class="summary list-group w-100">
+                                <div class="list-group-item bg-light">
+                                    <div class="container-fluid mx-0 px-0">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold">
+                                                    #1 - Primary 20G
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 23%" aria-valuenow="23" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 28%" aria-valuenow="28" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-light">
+                                    <div class="container-fluid mx-0 px-0">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold">
+                                                    #2 - Secondary 9G
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 23%" aria-valuenow="23" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 28%" aria-valuenow="28" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-light">
+                                    <div class="container-fluid mx-0 px-0">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold">
+                                                    #3 - Snake Tank
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 23%" aria-valuenow="23" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 28%" aria-valuenow="28" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-light">
+                                    <div class="container-fluid mx-0 px-0">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold">
+                                                    #4 - Ants BQ
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 23%" aria-valuenow="23" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 28%" aria-valuenow="28" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item bg-light">
+                                    <div class="container-fluid mx-0 px-0">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="font-weight-bold">
+                                                    #5 - Ants PLNT
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 23%" aria-valuenow="23" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: 28%" aria-valuenow="28" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger" role="progressbar"
+                                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10 bg-primary">
+                            Graph - Tall + Long
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="list-group w-100">
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
-                                <span>
-                                    <span class="fa fa-home fa-lg fa-fw"></span>
-                                    <span>Home</span>
-                                </span>
-                            </a>
 
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark parent-list-group-item expanded">
-                                <span>
-                                    <span class="fa fa-tree fa-lg fa-fw"></span>
-                                    <span>Vivariums</span>
-                                </span>
-                                <!-- <span class="fa fa-chevron-right fa-fw text-right"></span> -->
-                                <span class="parent-item-chevron fa fa-chevron-down fa-fw text-right"></span>
-                                
-                            </a>
-
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
-                                <span>
-                                    <span class="fa fa-tree fa-lg fa-fw"></span>
-                                    <span>Vivariums</span>
-                                </span>
-                            </a>
-
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
-                                <span>
-                                    <span class="fa fa-tree fa-lg fa-fw"></span>
-                                    <span>Vivariums</span>
-                                </span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark child-list-group-item">
-                                <span>
-                                    <span class="fa fa-tree fa-lg fa-fw"></span>
-                                    <span>Vivariums</span>
-                                </span>
-                            </a>
-
-
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
-                                <span>
-                                    <span class="fa fa-cog fa-lg fa-fw"></span>
-                                    <span>Settings</span>
-                                </span>
-                            </a>
-
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">
-                                <span>
-                                    <span class="fa fa-sign-out-alt fa-lg fa-fw"></span>
-                                    <span>Sign-Out</span>
-                                </span>
-                            </a>
+                    <div class="row" style="height: 10rem;">
+                        <div class="col bg-warning">
+                            hello world
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-10 bg-light">
-                Cool beans
             </div>
         </div>
     </div>
 
     <%- include('../../templates/public-body-footer.ejs'); -%>
 </body>
+
 </html>
 
 <!--

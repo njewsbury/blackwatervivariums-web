@@ -1,11 +1,10 @@
 'use strict';
+const appconfig = require('./conf/app');
 
 const express = require('express');
 const helmet = require('helmet');
 const ejs = require('ejs');
 const bodyparser = require('body-parser');
-
-const appconfig = require('./conf/app');
 const logger = require('./conf/logger')('appserv');
 
 const EMPTY_CONTEXT_PATH = '/';

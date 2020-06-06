@@ -7,20 +7,24 @@
 function Navigation() { }
 
 Navigation.prototype.initialize = function () {
-    $('.navigation-container .list-group a.list-group-item').on('click', (evt) => {
+    $('.navigation-container a.bwv-nav-item').on('click', (evt) => {
         if (!evt || !evt.currentTarget) {
             return;
         }
         console.log('Navigation Clicked', evt.currentTarget);
 
-        if ($(evt.currentTarget).hasClass('parent-list-group-item')) {
+        if ($(evt.currentTarget).hasClass('parent')) {
             // User clicked a parent list item.
-            $(evt.currentTarget).toggleClass('expanded');
             $(evt.currentTarget)
                 .find('.parent-item-chevron')
                 .toggleClass('fa-chevron-right fa-chevron-down');
-            
-            $('.child-list-group-item').toggleClass('d-none');
+            if ($('#child-vivarium-list:visible').length > 0) {
+                $('.child-vivarium-list').slideUp();
+            } else {
+                $('.child-vivarium-list').slideDown();
+            }
+            // TODO: Delay until slide animation is done.
+            $(evt.currentTarget).toggleClass('expanded');
         }
     });
 };

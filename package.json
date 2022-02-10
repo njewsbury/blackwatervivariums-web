@@ -36,6 +36,6 @@
     "eslint": "6.5.1",
     "eslint-config-google": "0.14.0",
     "mkdirp": "1.0.4",
-    "node-sass": "4.14.1"
+    "node-sass": "7.0.0"
   }
 }
